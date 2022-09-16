@@ -12,15 +12,10 @@ export default class searchFilters extends Component {
       "controller:full-page-search"
     );
 
-    let hashSlug = `#${slug}`;
-    let categoryRegex = new RegExp(`${hashSlug}`, "g");
-    let searchTerm = searchController.searchTerm;
+    let categoryRegex = new RegExp(/#\S+/, "g");
+    let searchTerm = searchController.searchTerm.replace(categoryRegex, "");
 
-    if (searchTerm.match(categoryRegex)) {
-      searchTerm = searchController.searchTerm.replace(categoryRegex, "");
-    } else {
-      searchTerm = `${searchTerm} #${slug}`;
-    }
+    searchTerm = `${searchTerm} #${slug}`;
 
     searchController.set("searchTerm", searchTerm.replace(/\s\s+/g, " "));
 
