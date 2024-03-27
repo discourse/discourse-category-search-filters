@@ -2,6 +2,7 @@
   {{#if (gt c.topic_count 0)}}
     <div
       class="custom-category-search-filter"
+      {{! template-lint-disable no-invalid-interactive }}
       {{on "click" (action "filterSearch" c.slug)}}
     >
       {{#if c.uploaded_logo}}
