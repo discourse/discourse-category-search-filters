@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { getOwner } from "discourse-common/lib/get-owner";
 
 export default class searchFilters extends Component {
