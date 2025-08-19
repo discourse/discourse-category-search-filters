@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import { fn } from "@ember/helper";
 import { on } from "@ember/modifier";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
@@ -30,7 +31,7 @@ export default class SearchFilters extends Component {
         <div
           class="custom-category-search-filter"
           {{! template-lint-disable no-invalid-interactive }}
-          {{on "click" (action "filterSearch" c.slug)}}
+          {{on "click" (fn this.filterSearch c.slug)}}
         >
           {{#if c.uploaded_logo}}
             <img
