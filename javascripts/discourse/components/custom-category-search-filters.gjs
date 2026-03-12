@@ -3,8 +3,8 @@ import { fn } from "@ember/helper";
 import { on } from "@ember/modifier";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
-import { gt } from "truth-helpers";
 import { getOwner } from "discourse/lib/get-owner";
+import { gt } from "discourse/truth-helpers";
 
 export default class SearchFilters extends Component {
   @service site;
